@@ -1,0 +1,106 @@
+uuid: 1b50d564-f2dd-4bef-a264-54e4b2434ab0
+langcode: en
+status: true
+dependencies:
+  config:
+    - filter.format.basic_html
+    - filter.format.full_html
+    - filter.format.restricted_html
+    - node.type.all_ai_provider
+    - node.type.ckeditor_generation
+    - node.type.fireworks_ai
+    - node.type.groq
+    - node.type.hugging_face
+    - node.type.lm_studio
+    - node.type.mistral
+    - node.type.ollama
+  module:
+    - ai_assistant_api
+    - ai_automators
+    - ai_ckeditor
+    - ai_content
+    - ai_image_alt_text
+    - ai_image_bulk_alt_text
+    - auto_entitylabel
+    - comment
+    - field_permissions
+    - filter
+    - media
+    - media_entity_download
+    - node
+    - search
+    - system
+    - webform
+_core:
+  default_config_hash: j5zLMOdJBqC0bMvSdth5UebkprJB8g_2FXHqhfpJzow
+id: anonymous
+label: 'Anonymous user'
+weight: 0
+is_admin: false
+permissions:
+  - 'access ai content tools'
+  - 'access comments'
+  - 'access content'
+  - 'administer ai_assistant'
+  - 'administer ai_automator'
+  - 'administer ai_log_type labels'
+  - 'batch fix ai images alt text'
+  - 'create all_ai_provider content'
+  - 'create ckeditor_generation content'
+  - 'create field_generate_content'
+  - 'create fireworks_ai content'
+  - 'create groq content'
+  - 'create hugging_face content'
+  - 'create lm_studio content'
+  - 'create mistral content'
+  - 'create ollama content'
+  - 'download media'
+  - 'edit any all_ai_provider content'
+  - 'edit any ckeditor_generation content'
+  - 'edit any fireworks_ai content'
+  - 'edit any groq content'
+  - 'edit any hugging_face content'
+  - 'edit any lm_studio content'
+  - 'edit any mistral content'
+  - 'edit any ollama content'
+  - 'edit body'
+  - 'edit field_ai_image'
+  - 'edit field_body_groq'
+  - 'edit field_body_mistral'
+  - 'edit field_generate_content'
+  - 'edit field_tags'
+  - 'edit own all_ai_provider content'
+  - 'edit own body'
+  - 'edit own ckeditor_generation content'
+  - 'edit own field_ai_image'
+  - 'edit own field_body_groq'
+  - 'edit own field_body_mistral'
+  - 'edit own field_generate_content'
+  - 'edit own field_tags'
+  - 'edit own fireworks_ai content'
+  - 'edit own groq content'
+  - 'edit own hugging_face content'
+  - 'edit own lm_studio content'
+  - 'edit own mistral content'
+  - 'edit own ollama content'
+  - 'generate ai alt tags'
+  - 'search content'
+  - 'use advanced search'
+  - 'use ai ckeditor'
+  - 'use text format basic_html'
+  - 'use text format full_html'
+  - 'use text format restricted_html'
+  - 'view any webform submission'
+  - 'view body'
+  - 'view field_ai_image'
+  - 'view field_body_groq'
+  - 'view field_body_mistral'
+  - 'view field_generate_content'
+  - 'view field_tags'
+  - 'view media'
+  - 'view own body'
+  - 'view own field_ai_image'
+  - 'view own field_body_groq'
+  - 'view own field_body_mistral'
+  - 'view own field_generate_content'
+  - 'view own field_tags'

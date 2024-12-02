@@ -1,0 +1,22 @@
+uuid: 57cce0f3-43c3-4a6f-b17c-bc3acf5f8065
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.ai_automator_status
+    - node.type.all_ai_provider
+  module:
+    - options
+id: node.all_ai_provider.ai_automator_status
+field_name: ai_automator_status
+entity_type: node
+bundle: all_ai_provider
+label: 'AI Automator Status'
+description: ''
+required: true
+translatable: true
+default_value:
+  - pending
+default_value_callback: ''
+settings: {  }
+field_type: list_string

@@ -1,0 +1,33 @@
+uuid: ad5de824-0028-4d74-b20f-ad97f9bb6b91
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.last_generated_content
+  module:
+    - user
+    - views
+  theme:
+    - starshot
+id: starshot_views_block__last_generated_content_block_1
+theme: starshot
+region: sidebar
+weight: -8
+provider: null
+plugin: 'views_block:last_generated_content-block_1'
+settings:
+  id: 'views_block:last_generated_content-block_1'
+  label: ''
+  label_display: visible
+  provider: views
+  views_label: ''
+  items_per_page: none
+visibility:
+  user_role:
+    id: user_role
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'
+    roles:
+      anonymous: anonymous
+      administrator: administrator

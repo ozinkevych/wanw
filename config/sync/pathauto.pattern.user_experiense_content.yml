@@ -1,0 +1,22 @@
+uuid: 4be2eeae-b69e-41be-9329-2d49a335aad3
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: user_experiense_content
+label: 'User Experiense Content'
+type: 'canonical_entities:node'
+pattern: '/examples-use/[node:title]'
+selection_criteria:
+  9c84ef6e-404a-4bc7-9e26-e10460d2b7dd:
+    id: 'entity_bundle:node'
+    negate: false
+    uuid: 9c84ef6e-404a-4bc7-9e26-e10460d2b7dd
+    context_mapping:
+      node: node
+    bundles:
+      example_of_use: example_of_use
+selection_logic: and
+weight: -5
+relationships: {  }

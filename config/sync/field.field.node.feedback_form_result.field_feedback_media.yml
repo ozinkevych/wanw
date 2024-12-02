@@ -1,0 +1,33 @@
+uuid: d6390855-6a63-4330-8eb0-b07bb84f5753
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_feedback_media
+    - media.type.document
+    - media.type.image
+    - media.type.video
+    - node.type.feedback_form_result
+id: node.feedback_form_result.field_feedback_media
+field_name: field_feedback_media
+entity_type: node
+bundle: feedback_form_result
+label: 'Feedback media'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      document: document
+      image: image
+      video: video
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: document
+field_type: entity_reference

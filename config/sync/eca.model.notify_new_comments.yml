@@ -1,0 +1,169 @@
+uuid: de82edc2-a85a-4d9e-bbb9-074336818b17
+langcode: en
+status: true
+dependencies:
+  config:
+    - eca.eca.notify_new_comments
+_core:
+  default_config_hash: QKCE7a3X9k6feUP_MFAHGLldbgodPfdxtCgRLz2wKwk
+id: notify_new_comments
+label: 'Notify by email: New Comments'
+tags:
+  - ''
+documentation: 'Notify the site owner and the content author by email when a new comment gets posted to the website.'
+filename: ''
+modeldata: |
+  <?xml version="1.0" encoding="UTF-8"?>
+  <bpmn2:definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:bpmn2="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:camunda="http://camunda.org/schema/1.0/bpmn" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:qa="http://some-company/schema/bpmn/qa" id="sample-diagram" targetNamespace="http://bpmn.io/schema/bpmn" xsi:schemaLocation="http://www.omg.org/spec/BPMN/20100524/MODEL BPMN20.xsd">
+    <bpmn2:process id="notify_new_comments" name="Notify by email: New Comments" isExecutable="true" camunda:versionTag="v3">
+      <bpmn2:documentation>Notify the site owner and the content author by email when a new comment gets posted to the website.</bpmn2:documentation>
+      <bpmn2:extensionElements>
+        <camunda:properties>
+          <camunda:property name="Changelog v1" value="Initial version" />
+          <camunda:property name="Changelog v2" value="Also send email to the author of the commented content" />
+          <camunda:property name="Changelog v3" value="Adjust name of model and check for duplicate recipients" />
+        </camunda:properties>
+      </bpmn2:extensionElements>
+      <bpmn2:startEvent id="Event_0i3cw7g" name="New comment created" camunda:modelerTemplate="org.drupal.event.content_entity:insert">
+        <bpmn2:extensionElements>
+          <camunda:properties>
+            <camunda:property name="pluginid" value="content_entity:insert" />
+          </camunda:properties>
+          <camunda:field name="type">
+            <camunda:string>comment _all</camunda:string>
+          </camunda:field>
+        </bpmn2:extensionElements>
+        <bpmn2:outgoing>Flow_05eq8fi</bpmn2:outgoing>
+      </bpmn2:startEvent>
+      <bpmn2:task id="Activity_1l3vura" name="Send email" camunda:modelerTemplate="org.drupal.action.action_send_email_action">
+        <bpmn2:extensionElements>
+          <camunda:properties>
+            <camunda:property name="pluginid" value="action_send_email_action" />
+          </camunda:properties>
+          <camunda:field name="recipient">
+            <camunda:string>[recipients]</camunda:string>
+          </camunda:field>
+          <camunda:field name="subject">
+            <camunda:string>New comment: [entity:entity:title]</camunda:string>
+          </camunda:field>
+          <camunda:field name="message">
+            <camunda:string>A new comment was posted to "[entity:entity:title]":
+
+  - Title: [entity:title]
+  - Author: [entity:author:name] from [entity:author:mail]
+  - Link to commented content: [entity:entity:url]
+
+  Comment:
+
+  [entity:body]</camunda:string>
+          </camunda:field>
+          <camunda:field name="replace_tokens">
+            <camunda:string>yes</camunda:string>
+          </camunda:field>
+        </bpmn2:extensionElements>
+        <bpmn2:incoming>Flow_0byrzfb</bpmn2:incoming>
+      </bpmn2:task>
+      <bpmn2:sequenceFlow id="Flow_05eq8fi" sourceRef="Event_0i3cw7g" targetRef="Activity_1fctzqc" />
+      <bpmn2:task id="Activity_1fctzqc" name="Set site mail ad recipient" camunda:modelerTemplate="org.drupal.action.eca_token_set_value">
+        <bpmn2:extensionElements>
+          <camunda:properties>
+            <camunda:property name="pluginid" value="eca_token_set_value" />
+          </camunda:properties>
+          <camunda:field name="token_name">
+            <camunda:string>recipients</camunda:string>
+          </camunda:field>
+          <camunda:field name="token_value">
+            <camunda:string>[site:mail]</camunda:string>
+          </camunda:field>
+          <camunda:field name="use_yaml">
+            <camunda:string>no</camunda:string>
+          </camunda:field>
+        </bpmn2:extensionElements>
+        <bpmn2:incoming>Flow_05eq8fi</bpmn2:incoming>
+        <bpmn2:outgoing>Flow_0jlccfa</bpmn2:outgoing>
+        <bpmn2:outgoing>Flow_0byrzfb</bpmn2:outgoing>
+      </bpmn2:task>
+      <bpmn2:task id="Activity_0ai94ln" name="Add node author to recipients" camunda:modelerTemplate="org.drupal.action.eca_token_set_value">
+        <bpmn2:extensionElements>
+          <camunda:properties>
+            <camunda:property name="pluginid" value="eca_token_set_value" />
+          </camunda:properties>
+          <camunda:field name="token_name">
+            <camunda:string>recipients</camunda:string>
+          </camunda:field>
+          <camunda:field name="token_value">
+            <camunda:string>[recipients],[entity:entity:author:mail]</camunda:string>
+          </camunda:field>
+          <camunda:field name="use_yaml">
+            <camunda:string>no</camunda:string>
+          </camunda:field>
+        </bpmn2:extensionElements>
+        <bpmn2:incoming>Flow_0jlccfa</bpmn2:incoming>
+      </bpmn2:task>
+      <bpmn2:sequenceFlow id="Flow_0jlccfa" name="Site and author email different?" camunda:modelerTemplate="org.drupal.condition.eca_scalar" sourceRef="Activity_1fctzqc" targetRef="Activity_0ai94ln">
+        <bpmn2:extensionElements>
+          <camunda:properties>
+            <camunda:property name="pluginid" value="eca_scalar" />
+          </camunda:properties>
+          <camunda:field name="left">
+            <camunda:string>[site:mail]</camunda:string>
+          </camunda:field>
+          <camunda:field name="operator">
+            <camunda:string>equal</camunda:string>
+          </camunda:field>
+          <camunda:field name="right">
+            <camunda:string>[entity:entity:author:mail]</camunda:string>
+          </camunda:field>
+          <camunda:field name="type">
+            <camunda:string>value</camunda:string>
+          </camunda:field>
+          <camunda:field name="case">
+            <camunda:string>no</camunda:string>
+          </camunda:field>
+          <camunda:field name="negate">
+            <camunda:string>yes</camunda:string>
+          </camunda:field>
+        </bpmn2:extensionElements>
+      </bpmn2:sequenceFlow>
+      <bpmn2:sequenceFlow id="Flow_0byrzfb" sourceRef="Activity_1fctzqc" targetRef="Activity_1l3vura" />
+    </bpmn2:process>
+    <bpmndi:BPMNDiagram id="sid-e6ef82a3-6f25-4aa2-a9f6-4be0a9910d33">
+      <bpmndi:BPMNPlane id="sid-b7f27226-5b04-4e8c-85b3-efec2215a140" bpmnElement="notify_new_comments">
+        <bpmndi:BPMNShape id="Event_0i3cw7g_di" bpmnElement="Event_0i3cw7g">
+          <dc:Bounds x="242" y="102" width="36" height="36" />
+          <bpmndi:BPMNLabel>
+            <dc:Bounds x="224" y="145" width="74" height="27" />
+          </bpmndi:BPMNLabel>
+        </bpmndi:BPMNShape>
+        <bpmndi:BPMNShape id="Activity_1fctzqc_di" bpmnElement="Activity_1fctzqc">
+          <dc:Bounds x="380" y="80" width="100" height="80" />
+          <bpmndi:BPMNLabel />
+        </bpmndi:BPMNShape>
+        <bpmndi:BPMNShape id="Activity_1l3vura_di" bpmnElement="Activity_1l3vura">
+          <dc:Bounds x="740" y="220" width="100" height="80" />
+          <bpmndi:BPMNLabel />
+        </bpmndi:BPMNShape>
+        <bpmndi:BPMNShape id="Activity_0ai94ln_di" bpmnElement="Activity_0ai94ln">
+          <dc:Bounds x="740" y="80" width="100" height="80" />
+          <bpmndi:BPMNLabel />
+        </bpmndi:BPMNShape>
+        <bpmndi:BPMNEdge id="Flow_05eq8fi_di" bpmnElement="Flow_05eq8fi">
+          <di:waypoint x="278" y="120" />
+          <di:waypoint x="380" y="120" />
+        </bpmndi:BPMNEdge>
+        <bpmndi:BPMNEdge id="Flow_0jlccfa_di" bpmnElement="Flow_0jlccfa">
+          <di:waypoint x="480" y="120" />
+          <di:waypoint x="740" y="120" />
+          <bpmndi:BPMNLabel>
+            <dc:Bounds x="621" y="86" width="78" height="27" />
+          </bpmndi:BPMNLabel>
+        </bpmndi:BPMNEdge>
+        <bpmndi:BPMNEdge id="Flow_0byrzfb_di" bpmnElement="Flow_0byrzfb">
+          <di:waypoint x="480" y="120" />
+          <di:waypoint x="535" y="120" />
+          <di:waypoint x="535" y="260" />
+          <di:waypoint x="740" y="260" />
+        </bpmndi:BPMNEdge>
+      </bpmndi:BPMNPlane>
+    </bpmndi:BPMNDiagram>
+  </bpmn2:definitions>

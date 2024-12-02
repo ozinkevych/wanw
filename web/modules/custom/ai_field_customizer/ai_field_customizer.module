@@ -1,0 +1,155 @@
+<?php
+
+use Drupal\Core\Routing\RouteMatch;
+use Drupal\field\Entity\FieldConfig;
+use Drupal\field\Entity\FieldStorageConfig;
+
+/**
+ * Processes a field for a given node form.
+ *
+ * @param string $field_name
+ *   The machine name of the field (e.g., 'body', 'field_ai_image', 'field_ai_tags').
+ * @param string $bundle
+ *   The bundle name of the content type (e.g., 'test').
+ * @param array &$form
+ *   The form array.
+ * @param \Drupal\Core\Form\FormStateInterface $form_state
+ *   The form state.
+ *
+ * @throws \ReflectionException
+ */
+function ai_field_customizer_process_field($field_name, $bundle, array &$form, \Drupal\Core\Form\FormStateInterface $form_state) {
+  try {
+    $node = $form_state->getFormObject()->getEntity();
+
+    // Load field configuration.
+    $field_config = \Drupal::entityTypeManager()
+      ->getStorage('field_config')
+      ->load("node.$bundle.$field_name");
+
+    if (!$field_config) {
+      \Drupal::logger('ai_field_customizer')->error("Field configuration not found for field $field_name.");
+      return;
+    }
+
+    // Load field storage configuration.
+    $field_storage = FieldStorageConfig::loadByName('node', $field_name);
+
+    if ($field_storage) {
+      // Use reflection to set fieldStorage.
+      $reflection = new \ReflectionClass($field_config);
+      $property = $reflection->getProperty('fieldStorage');
+      $property->setAccessible(true);
+      $property->setValue($field_config, $field_storage);
+
+      // Set itemDefinition.
+      $typed_data_manager = \Drupal::service('typed_data_manager');
+      $item_definition = $typed_data_manager->createDataDefinition('field_item:' . $field_config->getType());
+
+      $item_definition_property = $reflection->getProperty('itemDefinition');
+      $item_definition_property->setAccessible(true);
+      $item_definition_property->setValue($field_config, $item_definition);
+    }
+
+    // Set up RouteMatch with proper parameters.
+    $parameters = [
+      'entity_type_id' => 'node',
+      'bundle' => $bundle,
+      'field_config' => $field_config,
+    ];
+
+    $route_name = 'entity.field_config.node_field_edit_form';
+    $route_provider = \Drupal::service('router.route_provider');
+    $route = $route_provider->getRouteByName($route_name);
+
+    $custom_route_match = new RouteMatch(
+      $route_name,
+      $route,
+      $parameters
+    );
+
+    // Initialize necessary services.
+    $entity_field_manager = \Drupal::service('entity_field.manager');
+    $field_rules = \Drupal::service('ai_automator.field_rules');
+    $module_handler = \Drupal::service('module_handler');
+    $processes = \Drupal::service('plugin.manager.ai_processor');
+    $entity_type_manager = \Drupal::service('entity_type.manager');
+
+    // Ensure services are available.
+    if (!$entity_field_manager || !$field_rules || !$module_handler || !$processes || !$entity_type_manager) {
+      \Drupal::logger('ai_field_customizer')->error('One or more required services are not available.');
+      return;
+    }
+
+    // Create an instance of the configurator.
+    $ai_automator_config = new \Drupal\ai_automators\FormAlter\AiAutomatorFieldConfig(
+      $entity_field_manager,
+      $field_rules,
+      $custom_route_match,
+      $module_handler,
+      $processes,
+      $entity_type_manager
+    );
+
+    // Modify form to pass the correct data
+    $form['#entity'] = $node;
+    $form['#field_config'] = $field_config;
+
+    // Add entity builder for the field.
+    $form['#entity_builders'][] = '_ai_field_customizer_entity_builder';
+
+    // Alter form for the specific field.
+    $ai_automator_config->alterForm($form, $form_state, $field_name);
+  } catch (\Exception $e) {
+    \Drupal::logger('ai_field_customizer')->error(
+      'Error in process_field for @field_name: @message',
+      ['@field_name' => $field_name, '@message' => $e->getMessage()]
+    );
+  }
+}
+
+/**
+ * Implements hook_form_alter().
+ */
+function ai_field_customizer_form_alter(array &$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+  if ($form_id === 'node_artificial_intelligence_form') {
+    // Define the fields and bundle to process.
+    $fields = ['field_tags', 'field_ai_image', 'field_ai_text'];
+    $bundle = 'artificial_intelligence';
+
+    // Process each field.
+    foreach ($fields as $field_name) {
+      ai_field_customizer_process_field($field_name, $bundle, $form, $form_state);
+    }
+  }
+
+  // dump($form_state);
+}
+
+/**
+ * Entity builder callback.
+ */
+function _ai_field_customizer_entity_builder($entity_type, $entity, &$form, $form_state) {
+  try {
+    $field_config = \Drupal::entityTypeManager()
+      ->getStorage('field_config')
+      ->load('node.test.body');
+
+    if (!$field_config) {
+      \Drupal::logger('ai_field_customizer')->error('Field configuration not found');
+      return;
+    }
+
+    $ai_automator_config = \Drupal::service('ai_automator.field_config');
+    if ($ai_automator_config) {
+      $ai_automator_config->addConfigValues($entity_type, $field_config, $form, $form_state);
+    } else {
+      \Drupal::logger('ai_field_customizer')->error('Service ai_automator.field_config not found');
+    }
+  } catch (\Exception $e) {
+    \Drupal::logger('ai_field_customizer')->error(
+      'Error in entity builder: @message',
+      ['@message' => $e->getMessage()]
+    );
+  }
+}

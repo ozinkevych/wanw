@@ -1,0 +1,13 @@
+uuid: c58d2beb-0737-4dc1-a42e-bff2a1138b78
+langcode: en
+status: false
+dependencies: {  }
+id: ssss
+modeller: core
+label: ssss
+version: null
+weight: null
+events: {  }
+conditions: {  }
+gateways: {  }
+actions: {  }

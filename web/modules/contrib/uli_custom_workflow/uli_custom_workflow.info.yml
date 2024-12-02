@@ -1,0 +1,13 @@
+---
+name: ULI Custom Workflow
+type: module
+description: >-
+  Change messages related to one-time login links, and allow said links to be
+  used by already-logged-in users.
+core_version_requirement: ^9 || ^10
+php: '8.x'
+
+# Information added by Drupal.org packaging script on 2023-07-12
+version: '1.0.0'
+project: 'uli_custom_workflow'
+datestamp: 1689128135

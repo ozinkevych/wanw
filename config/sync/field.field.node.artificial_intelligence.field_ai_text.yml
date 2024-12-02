@@ -1,0 +1,22 @@
+uuid: dfe3c006-2f25-4293-a4de-87bb437f7e34
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_ai_text
+    - node.type.artificial_intelligence
+  module:
+    - text
+id: node.artificial_intelligence.field_ai_text
+field_name: field_ai_text
+entity_type: node
+bundle: artificial_intelligence
+label: 'Ai text'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats: {  }
+field_type: text_long

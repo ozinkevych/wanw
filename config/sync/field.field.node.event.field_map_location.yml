@@ -1,0 +1,40 @@
+uuid: 2964b9c3-4250-4c1c-9a28-e906c3ba3fc6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_map_location
+    - node.type.event
+  module:
+    - geocoder_field
+    - geofield
+third_party_settings:
+  geocoder_field:
+    method: geocode
+    weight: 0
+    field: field_location
+    skip_not_empty_value: false
+    disabled: false
+    hidden: false
+    providers:
+      - nominatim
+    dumper: wkt
+    delta_handling: default
+    failure:
+      handling: preserve
+      status_message: true
+      log: true
+_core:
+  default_config_hash: Zuo3hAMWj1DZA-xHSHrfNkow1z1oxBkm59nYewfb9hA
+id: node.event.field_map_location
+field_name: field_map_location
+entity_type: node
+bundle: event
+label: 'Map Location'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: geofield

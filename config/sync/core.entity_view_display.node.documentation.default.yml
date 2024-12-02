@@ -1,0 +1,71 @@
+uuid: 862f279c-026c-450b-b9da-fce676ddf445
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.documentation.body
+    - field.field.node.documentation.field_drupal_org_link
+    - field.field.node.documentation.field_example_documentation_link
+    - field.field.node.documentation.field_image
+    - image.style.wide_16_9_focal_point
+    - node.type.documentation
+  module:
+    - link
+    - media
+    - text
+    - user
+id: node.documentation.default
+targetEntityType: node
+bundle: documentation
+mode: default
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  field_drupal_org_link:
+    type: link
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 102
+    region: content
+  field_example_documentation_link:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 103
+    region: content
+  field_image:
+    type: media_thumbnail
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: wide_16_9_focal_point
+      image_loading:
+        attribute: eager
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  flag_bookmark:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 10
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  search_api_excerpt: true

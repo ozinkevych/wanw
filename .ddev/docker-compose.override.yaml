@@ -1,0 +1,5 @@
+services:
+  web:
+    ports:
+      - "8080:80"  # Bind DDEV to port 8080 on the host
+      - "8443:443"   # Keep HTTPS as is

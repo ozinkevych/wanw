@@ -1,0 +1,22 @@
+uuid: be73e594-7151-4ad9-9c3a-097c4da4600e
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - starshot
+_core:
+  default_config_hash: erQSEZF2XUjNmgTl0uNRBzmg18ZGXwUcw2FhApoeuHk
+id: starshot_content
+theme: starshot
+region: content
+weight: -6
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Main page content'
+  label_display: '0'
+  provider: system
+visibility: {  }

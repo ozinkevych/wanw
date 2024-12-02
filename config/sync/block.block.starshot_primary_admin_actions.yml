@@ -1,0 +1,20 @@
+uuid: b77bf755-a9c7-462f-8327-f672804f2218
+langcode: en
+status: true
+dependencies:
+  theme:
+    - starshot
+_core:
+  default_config_hash: Q9_2whdOj1YIomfvsIfopROW4FT_X5pY0DjdOiOaQ5U
+id: starshot_primary_admin_actions
+theme: starshot
+region: highlighted
+weight: -7
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Primary admin actions'
+  label_display: '0'
+  provider: core
+visibility: {  }

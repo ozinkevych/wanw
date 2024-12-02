@@ -1,0 +1,23 @@
+uuid: 4e0cda4a-b145-41bb-9fa5-6c8c5c8eae99
+langcode: en
+status: true
+dependencies:
+  module:
+    - field_permissions
+    - node
+    - text
+third_party_settings:
+  field_permissions:
+    permission_type: custom
+id: node.field_body_mistral
+field_name: field_body_mistral
+entity_type: node
+type: text_long
+settings: {  }
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

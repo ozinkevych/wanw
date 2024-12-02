@@ -1,0 +1,66 @@
+uuid: a8e66e97-6d63-4411-9876-e2f715991d68
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.all_ai_provider.ai_automator_status
+    - field.field.node.all_ai_provider.body
+    - field.field.node.all_ai_provider.field_body_groq
+    - field.field.node.all_ai_provider.field_body_mistral
+    - field.field.node.all_ai_provider.field_prompt
+    - node.type.all_ai_provider
+  module:
+    - text
+id: node.all_ai_provider.default
+targetEntityType: node
+bundle: all_ai_provider
+mode: default
+content:
+  body:
+    type: text_textarea_with_summary
+    weight: 1
+    region: content
+    settings:
+      rows: 9
+      summary_rows: 3
+      placeholder: ''
+      show_summary: false
+    third_party_settings: {  }
+  field_body_groq:
+    type: text_textarea
+    weight: 2
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_body_mistral:
+    type: text_textarea
+    weight: 3
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_prompt:
+    type: string_textarea
+    weight: 0
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  ai_automator_status: true
+  created: true
+  moderation_state: true
+  path: true
+  promote: true
+  publish_on: true
+  simple_sitemap: true
+  status: true
+  sticky: true
+  title: true
+  uid: true
+  unpublish_on: true
+  url_redirects: true

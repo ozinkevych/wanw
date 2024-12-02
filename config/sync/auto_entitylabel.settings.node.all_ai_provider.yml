@@ -1,0 +1,10 @@
+status: 1
+pattern: 'Generate article with All AI | [node:nid] | [current-date:html_date]'
+escape: false
+preserve_titles: false
+save: false
+chunk: 50
+dependencies:
+  config:
+    - node.type.all_ai_provider
+new_content_behavior: 0

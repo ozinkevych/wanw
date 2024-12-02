@@ -1,0 +1,18 @@
+@import 'variables';
+
+.form--inline {
+    margin-bottom: $gutter;
+
+    .form-actions {
+        margin-top: 0;
+
+        .button,
+        .action-link {
+            margin-block: 0;
+        }
+    }
+
+    & > * {
+        margin-top: 0;
+    }
+}

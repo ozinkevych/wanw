@@ -1,0 +1,19 @@
+uuid: 1b4e55d7-09a8-4de4-b2b2-c64bdc0bd435
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_prompt
+    - node.type.all_ai_provider
+id: node.all_ai_provider.field_prompt
+field_name: field_prompt
+entity_type: node
+bundle: all_ai_provider
+label: Prompt
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

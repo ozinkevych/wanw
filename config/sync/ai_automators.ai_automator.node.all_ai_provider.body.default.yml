@@ -1,0 +1,40 @@
+uuid: a51c0f0c-8b1e-4a17-9960-b60c6339d074
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.all_ai_provider.body
+id: node.all_ai_provider.body.default
+label: 'Body Default'
+rule: llm_simple_text_with_summary
+input_mode: base
+weight: 200
+worker_type: batch
+entity_type: node
+bundle: all_ai_provider
+field_name: body
+edit_mode: true
+base_field: field_prompt
+prompt: "Generate the article according to the given prompt {{ context }} \r\n\r\nThe article should be structured in an appropriate HTML format, including the following sections:\r\n\r\n1. A `<h1>` heading with the title of the article.\r\n2. A short `<p>` introductory paragraph summarizing the content.\r\n3. Several `<h2>` subheadings to organize the main points.\r\n4. Detailed paragraphs (`<p>`) for each subheading that explain the topic.\r\n5. A `<h3>` section at the end titled \"Conclusion\" with a brief summary of the main ideas.\r\n6. Add appropriate <ul> or <ol> lists for clarity.\r\n7. Add a `<blockquote>` section if relevant quotes or references are needed.\r\n8. Don't use CSS classes\r\n\r\nMake sure the content is written in a professional tone and well-structured for easy reading.\r\n"
+token: ''
+plugin_config:
+  automator_enabled: 1
+  automator_rule: llm_simple_text_with_summary
+  automator_mode: base
+  automator_base_field: field_prompt
+  automator_prompt: "Generate the article according to the given prompt {{ context }} \r\n\r\nThe article should be structured in an appropriate HTML format, including the following sections:\r\n\r\n1. A `<h1>` heading with the title of the article.\r\n2. A short `<p>` introductory paragraph summarizing the content.\r\n3. Several `<h2>` subheadings to organize the main points.\r\n4. Detailed paragraphs (`<p>`) for each subheading that explain the topic.\r\n5. A `<h3>` section at the end titled \"Conclusion\" with a brief summary of the main ideas.\r\n6. Add appropriate <ul> or <ol> lists for clarity.\r\n7. Add a `<blockquote>` section if relevant quotes or references are needed.\r\n8. Don't use CSS classes\r\n\r\nMake sure the content is written in a professional tone and well-structured for easy reading.\r\n"
+  automator_token: ''
+  automator_edit_mode: 1
+  automator_label: 'Body Default'
+  automator_weight: '200'
+  automator_worker_type: batch
+  automator_ai_provider: fireworks
+  automator_ai_model: accounts/fireworks/models/firefunction-v2-rc
+  automator_configuration_max_tokens: '300'
+  automator_configuration_prompt_trunate_len: '1500'
+  automator_configuration_temperature: '1'
+  automator_configuration_top_p: '1'
+  automator_configuration_top_k: '1'
+  automator_configuration_frequency_penalty: '0'
+  automator_configuration_presence_penalty: '0'
+  automator_code_block_type: html

@@ -1,0 +1,29 @@
+uuid: 12c6d0ad-938c-4936-a759-748715d54138
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_example_update_link
+    - node.type.example_of_use
+    - node.type.updates
+id: node.updates.field_example_update_link
+field_name: field_example_update_link
+entity_type: node
+bundle: updates
+label: 'Example update link'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      example_of_use: example_of_use
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

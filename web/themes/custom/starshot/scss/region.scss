@@ -1,0 +1,15 @@
+@import 'variables';
+
+.region {
+    &--sidebar {
+        border-left: 2px solid $blue;
+        padding-left: $gutter;
+    }
+}
+
+.layout__region {
+    &--second {
+        border-left: 2px solid $blue;
+        padding-left: $gutter;
+    }
+}

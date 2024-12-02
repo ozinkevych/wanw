@@ -1,0 +1,20 @@
+entity_type_groups:
+  node:
+    blog:
+      - basic
+      - advanced
+      - open_graph
+    event:
+      - basic
+      - advanced
+      - open_graph
+    page:
+      - basic
+      - advanced
+      - open_graph
+separator: ''
+tag_trim_method: beforeValue
+use_maxlength: true
+tag_trim_maxlength: {  }
+tag_scroll_max_height: ''
+tag_trim_end: '|.,-:;/+&([{"'''

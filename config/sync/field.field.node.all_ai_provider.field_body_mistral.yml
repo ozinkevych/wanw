@@ -1,0 +1,24 @@
+uuid: 1453db32-7bab-4580-80df-57234d872ffa
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_body_mistral
+    - filter.format.basic_html
+    - node.type.all_ai_provider
+  module:
+    - text
+id: node.all_ai_provider.field_body_mistral
+field_name: field_body_mistral
+entity_type: node
+bundle: all_ai_provider
+label: 'Body Mistral'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats:
+    - basic_html
+field_type: text_long

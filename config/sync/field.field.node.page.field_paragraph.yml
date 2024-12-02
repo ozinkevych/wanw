@@ -1,0 +1,41 @@
+uuid: e6acfbc3-9257-4f7b-a395-6fb2cb166978
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_paragraph
+    - node.type.page
+    - paragraphs.paragraphs_type.images
+    - paragraphs.paragraphs_type.remote_video
+    - paragraphs.paragraphs_type.text
+  module:
+    - entity_reference_revisions
+id: node.page.field_paragraph
+field_name: field_paragraph
+entity_type: node
+bundle: page
+label: Paragraph
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      text: text
+      images: images
+      remote_video: remote_video
+    negate: 0
+    target_bundles_drag_drop:
+      images:
+        weight: -6
+        enabled: true
+      remote_video:
+        weight: -5
+        enabled: true
+      text:
+        weight: -7
+        enabled: true
+field_type: entity_reference_revisions

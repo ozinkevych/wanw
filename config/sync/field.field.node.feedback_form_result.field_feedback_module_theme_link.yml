@@ -1,0 +1,23 @@
+uuid: 53b84ed3-959e-4226-abbd-3f0136ad6719
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_feedback_module_theme_link
+    - node.type.feedback_form_result
+  module:
+    - link
+id: node.feedback_form_result.field_feedback_module_theme_link
+field_name: field_feedback_module_theme_link
+entity_type: node
+bundle: feedback_form_result
+label: 'Feedback module/theme link'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  title: 1
+  link_type: 17
+field_type: link

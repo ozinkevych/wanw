@@ -1,0 +1,18 @@
+@import 'variables';
+
+.block-extra-field-blockuserusermember-for {
+    .block__content {
+        .form-item {
+            display: flex;
+
+            .label {
+                margin: 0;
+                margin-right: $gutterS;
+
+                &::after {
+                    content: ":";
+                }
+            }
+        }
+    }
+}

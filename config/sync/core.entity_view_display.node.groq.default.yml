@@ -1,0 +1,30 @@
+uuid: 08ecea8e-e9cc-456e-836c-774eb411aa49
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.groq.ai_automator_status
+    - field.field.node.groq.body
+    - field.field.node.groq.field_tags
+    - node.type.groq
+  module:
+    - text
+    - user
+id: node.groq.default
+targetEntityType: node
+bundle: groq
+mode: default
+content:
+  body:
+    type: text_trimmed
+    label: hidden
+    settings:
+      trim_length: 100
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  ai_automator_status: true
+  field_tags: true
+  links: true
+  search_api_excerpt: true

@@ -1,0 +1,40 @@
+uuid: d50a3013-f3fd-47b8-93ee-aecb1e009190
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.ollama.ai_automator_status
+    - field.field.node.ollama.body
+    - field.field.node.ollama.field_tags
+    - node.type.ollama
+  module:
+    - text
+    - user
+id: node.ollama.default
+targetEntityType: node
+bundle: ollama
+mode: default
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  field_tags:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 10
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  ai_automator_status: true
+  search_api_excerpt: true

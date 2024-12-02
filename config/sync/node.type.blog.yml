@@ -1,0 +1,41 @@
+uuid: e1283a52-b32a-444b-83dd-9aafe6fb5ff2
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+    - scheduler
+    - type_tray
+third_party_settings:
+  type_tray:
+    type_category: _none
+    type_thumbnail: ''
+    type_icon: 'public://type-tray-icons/icon-blog-post.svg'
+    type_description: ''
+    existing_nodes_link_text: ''
+    type_weight: 0
+  scheduler:
+    expand_fieldset: when_required
+    fields_display_mode: vertical_tab
+    publish_enable: true
+    publish_past_date: error
+    publish_past_date_created: false
+    publish_required: false
+    publish_revision: true
+    publish_touch: true
+    show_message_after_update: true
+    unpublish_enable: true
+    unpublish_required: false
+    unpublish_revision: true
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+_core:
+  default_config_hash: emeNOY-puixHky4eV17QdQsfPYdVobITfP639JtOIcQ
+name: 'Blog post'
+type: blog
+description: 'A simple blog post with an image, tags, and comments.'
+help: null
+new_revision: true
+preview_mode: 1
+display_submitted: true

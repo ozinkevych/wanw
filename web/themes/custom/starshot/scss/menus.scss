@@ -1,0 +1,59 @@
+.primary-nav__menu-item--active-trail {
+    .primary-nav__menu-link-inner::after {
+        transform: scaleX(1);
+    }
+}
+
+@media (min-width: 90rem) {
+    body.is-always-mobile-nav .header-nav {
+        max-width: 700px;
+        padding: 0 calc($gutter * 2);
+    }
+}
+
+// .mobile-nav-button[aria-expanded="true"] {
+//     transform: translateX(50%);
+// }
+
+// .mobile-nav-button[aria-expanded="true"] .mobile-nav-button__icon {
+//     border-top-color: transparent;
+// }
+  
+// .mobile-nav-button[aria-expanded="true"] .mobile-nav-button__icon::before {
+//     transform: translateY(-0.1875rem) rotate(-45deg);
+// }
+  
+// .mobile-nav-button[aria-expanded="true"] .mobile-nav-button__icon::after {
+//     transform: translateY(-0.1875rem) rotate(45deg);
+// }
+
+// #block-starshot-account-menu {
+//     ul {
+//         li {
+//             &:first-child {
+//                 a {
+//                     visibility: hidden;
+//                     position: relative;
+
+//                     &::after {
+//                         transition: none;
+//                         opacity: 1;
+//                         content: "";
+//                         display: block;
+//                         visibility: visible;
+//                         width: 30px;
+//                         height: 30px;
+//                         background-image: url('../images/user.jpg');
+//                         background-size: cover;
+//                         background-position: center; 
+//                         border: none;
+//                         position: absolute;
+//                         left: 50%;
+//                         transform: translateX(-50%);
+//                         top: 0;
+//                     }
+//                 }
+//             }
+//         }
+//     }
+// }

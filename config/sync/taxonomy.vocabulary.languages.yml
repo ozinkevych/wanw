@@ -1,0 +1,25 @@
+uuid: 2e1f6342-aa70-487e-b53f-f12d55b18b77
+langcode: en
+status: true
+dependencies:
+  module:
+    - scheduler
+third_party_settings:
+  scheduler:
+    expand_fieldset: when_required
+    fields_display_mode: vertical_tab
+    publish_enable: false
+    publish_past_date: error
+    publish_past_date_created: false
+    publish_required: false
+    publish_revision: false
+    publish_touch: false
+    show_message_after_update: true
+    unpublish_enable: false
+    unpublish_required: false
+    unpublish_revision: false
+name: 'Translation Languages'
+vid: languages
+description: '"This Vocabulary contains terms that represent the target languages for text translation. "'
+weight: 0
+new_revision: false

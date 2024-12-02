@@ -1,0 +1,31 @@
+uuid: 36b673da-bfda-4fce-90ee-4ecd17908925
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.mistral.ai_automator_status
+    - field.field.node.mistral.body
+    - field.field.node.mistral.field_tags
+    - node.type.mistral
+  module:
+    - text
+    - user
+id: node.mistral.teaser
+targetEntityType: node
+bundle: mistral
+mode: teaser
+content:
+  body:
+    type: text_trimmed
+    label: hidden
+    settings:
+      trim_length: 100
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  ai_automator_status: true
+  field_tags: true
+  links: true
+  search_api_excerpt: true

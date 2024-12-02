@@ -1,0 +1,22 @@
+a{text-align:center}#node-all-ai-provider-form .js-form-item form-item,#node-fireworks-ai-form .js-form-item form-item,#node-groq-form .js-form-item form-item,#node-hugging-face-form .js-form-item form-item,#node-lm-studio-form .js-form-item form-item,#node-mistral-form .js-form-item form-item,#node-ollama-form .js-form-item form-item{display:none}.webform-flex--1{width:100%}.webform-flex--1 .fieldset__wrapper{padding:0}.form--inline{margin-bottom:30px}.form--inline .form-actions{margin-top:0}.form--inline .form-actions .action-link,.form--inline .form-actions .button{margin-block:0}.form--inline>*{margin-top:0}body,html{margin:0;padding:0}*{-webkit-box-sizing:border-box;box-sizing:border-box}.flag a img{width:25px;max-width:none!important}header.site-header .site-branding{border-radius:0 0 15px 0}.grid-view-2-col .view-content{display:grid;grid-gap:30px;grid-template-columns:repeat(2,1fr)}.grid-view-4-col .view-content{display:grid;grid-gap:30px;grid-template-columns:repeat(4,1fr)}.grid-view-8-col .view-content{display:grid;grid-gap:30px;grid-template-columns:repeat(8,1fr)}.primary-nav__menu-item--active-trail .primary-nav__menu-link-inner::after{-webkit-transform:scaleX(1);transform:scaleX(1)}@media (min-width:90rem){body.is-always-mobile-nav .header-nav{max-width:700px;padding:0 60px}}.block-extra-field-blockuserusermember-for .block__content .form-item{display:-webkit-box;display:-ms-flexbox;display:flex}.block-extra-field-blockuserusermember-for .block__content .form-item .label{margin:0;margin-right:10px}.block-extra-field-blockuserusermember-for .block__content .form-item .label::after{content:":"}.region--sidebar{border-left:2px solid #0444c4;padding-left:30px}.layout__region--second{border-left:2px solid #0444c4;padding-left:30px}.view,.view-content{display:grid;gap:0;grid-template-rows:-webkit-max-content;grid-template-rows:max-content}@media (min-width:43.75rem){.view,.view-content{gap:0}}.views-row{position:relative;margin-bottom:30px}
+
+
+
+
+#node-all-ai-provider-form .js-form-item.form-item.js-form-type-vertical-tabs.form-item-.js-form-item-.form-no-label,
+#node-mistral-form .js-form-item.form-item.js-form-type-vertical-tabs.form-item-.js-form-item-.form-no-label,
+#node-fireworks-ai-form .js-form-item.form-item.js-form-type-vertical-tabs.form-item-.js-form-item-.form-no-label,
+#node-groq-form .js-form-item.form-item.js-form-type-vertical-tabs.form-item-.js-form-item-.form-no-label,
+#node-hugging-face-form .js-form-item.form-item.js-form-type-vertical-tabs.form-item-.js-form-item-.form-no-label,
+#node-lm-studio-form .js-form-item.form-item.js-form-type-vertical-tabs.form-item-.js-form-item-.form-no-label,
+#node-ollama-form .js-form-item.form-item.js-form-type-vertical-tabs.form-item-.js-form-item-.form-no-label
+{
+  display: none;
+}
+
+.filter-help.js-form-wrapper.form-wrapper{
+  display: none!important;
+}
+.last-generated-content-title {
+  margin: 10px 0!important;
+}

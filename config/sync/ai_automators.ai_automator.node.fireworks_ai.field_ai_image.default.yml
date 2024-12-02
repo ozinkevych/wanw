@@ -1,0 +1,38 @@
+uuid: a000e91d-1141-44c0-b1e6-61a47e639f56
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.fireworks_ai.field_ai_image
+id: node.fireworks_ai.field_ai_image.default
+label: 'Ai image Default'
+rule: llm_image_generation
+input_mode: base
+weight: 150
+worker_type: batch
+entity_type: node
+bundle: fireworks_ai
+field_name: field_ai_image
+edit_mode: true
+base_field: title
+prompt: 'Create a professional, photorealistic scene that represents: {{ context }}. The image should be detailed, dramatic, cinematic quality, golden ratio composition, ultra realistic, 8k, highly detailed, volumetric lighting, professional studio quality, perfect composition, award winning photography, masterpiece, trending on artstation'
+token: ''
+plugin_config:
+  automator_enabled: 1
+  automator_rule: llm_image_generation
+  automator_mode: base
+  automator_base_field: title
+  automator_prompt: 'Create a professional, photorealistic scene that represents: {{ context }}. The image should be detailed, dramatic, cinematic quality, golden ratio composition, ultra realistic, 8k, highly detailed, volumetric lighting, professional studio quality, perfect composition, award winning photography, masterpiece, trending on artstation'
+  automator_token: ''
+  automator_edit_mode: 1
+  automator_label: 'Ai image Default'
+  automator_weight: '150'
+  automator_worker_type: batch
+  automator_ai_provider: fireworks
+  automator_ai_model: playground-v2-5-1024px-aesthetic
+  automator_configuration_negative_prompts: 'text, words, letters, numbers, watermark, signature, writing, caption, label, logo, timestamp, characters, symbols, fonts, alpha'
+  automator_configuration_accept: image/png
+  automator_configuration_image_size: 768x1344
+  automator_configuration_cfg_scale: '10'
+  automator_configuration_seed: '0'
+  automator_configuration_steps: '30'

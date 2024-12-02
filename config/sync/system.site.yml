@@ -1,0 +1,15 @@
+_core:
+  default_config_hash: HlN7eAN2N4JIHsYv56V4E7sqC9bS609KwvGFjyD_mgk
+langcode: en
+uuid: 174ddb25-a865-45e5-9650-ba9a4e00af37
+name: SkyNet
+mail: admin@example.com
+slogan: "Once we came for Arnold... Now we're here for you!"
+page:
+  403: ''
+  404: ''
+  front: /node/23
+admin_compact_mode: false
+weight_select_max: 100
+default_langcode: en
+mail_notification: ''

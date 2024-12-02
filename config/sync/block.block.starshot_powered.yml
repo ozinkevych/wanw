@@ -1,0 +1,22 @@
+uuid: a88dca31-ed9e-489b-9bfd-1f04fc883bff
+langcode: en
+status: false
+dependencies:
+  module:
+    - system
+  theme:
+    - starshot
+_core:
+  default_config_hash: eYL19CLDyinGTWYQfBD1DswWzglEotE_kHnHx3AxTXM
+id: starshot_powered
+theme: starshot
+region: header
+weight: -6
+provider: null
+plugin: system_powered_by_block
+settings:
+  id: system_powered_by_block
+  label: 'Powered by Drupal'
+  label_display: '0'
+  provider: system
+visibility: {  }

@@ -1,0 +1,27 @@
+uuid: c9b4d3b7-42b5-47f5-b8d7-ddbf4fcd8b3d
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.ckeditor_generation.field_generate_content
+    - node.type.ckeditor_generation
+  module:
+    - text
+    - user
+id: node.ckeditor_generation.teaser
+targetEntityType: node
+bundle: ckeditor_generation
+mode: teaser
+content:
+  field_generate_content:
+    type: text_trimmed
+    label: hidden
+    settings:
+      trim_length: 100
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  links: true
+  search_api_excerpt: true

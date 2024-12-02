@@ -1,0 +1,70 @@
+uuid: 1ef88b81-b252-4860-ab4a-c74ca8fd54c2
+langcode: en
+status: true
+dependencies:
+  config:
+    - filter.format.full_html
+  module:
+    - ckeditor5
+_core:
+  default_config_hash: cf3OD2-sh_V35WL2Zk6MEt4S4j6anE1d7C3Jk0rosBo
+format: full_html
+editor: ckeditor5
+settings:
+  toolbar:
+    items:
+      - sourceEditing
+      - aickeditor
+  plugins:
+    ai_ckeditor_ai:
+      dialog:
+        autoresize: 'min-width: 600px'
+        height: '750'
+        width: '900'
+        dialog_class: ai-ckeditor-modal
+      plugins:
+        ai_automators_ckeditor:
+          workflows:
+            test:
+              enabled: 0
+              inputs: {  }
+              output: ''
+              selected_input: ''
+              require_selection: 0
+              write_mode: replace
+          enabled: false
+        ai_ckeditor_completion:
+          provider: mistral__ministral-3b-latest
+          enabled: true
+        ai_ckeditor_help:
+          enabled: false
+        ai_ckeditor_reformat_html:
+          provider: mistral__ministral-3b-latest
+          enabled: true
+        ai_ckeditor_summarize:
+          provider: mistral__ministral-8b-latest
+          enabled: true
+        ai_ckeditor_tone:
+          autocreate: true
+          provider: mistral__ministral-3b-latest
+          tone_vocabulary: tone
+          use_description: 1
+          enabled: true
+        ai_ckeditor_translate:
+          autocreate: false
+          provider: mistral__ministral-3b-latest
+          translate_vocabulary: languages
+          use_description: true
+          enabled: true
+    ckeditor5_sourceEditing:
+      allowed_tags: {  }
+    media_media:
+      allow_view_mode_override: false
+image_upload:
+  status: true
+  scheme: public
+  directory: inline-images
+  max_size: null
+  max_dimensions:
+    width: null
+    height: null

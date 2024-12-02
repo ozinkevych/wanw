@@ -1,0 +1,40 @@
+uuid: 064d9927-add2-4d66-aa82-90a23c52a49c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.lm_studio.ai_automator_status
+    - field.field.node.lm_studio.body
+    - field.field.node.lm_studio.field_tags
+    - node.type.lm_studio
+  module:
+    - text
+    - user
+id: node.lm_studio.default
+targetEntityType: node
+bundle: lm_studio
+mode: default
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  field_tags:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 10
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  ai_automator_status: true
+  search_api_excerpt: true

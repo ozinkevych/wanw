@@ -1,0 +1,61 @@
+uuid: f493a0ea-38d1-4dc9-8ac4-a05f642d791f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.feedback_form_result.body
+    - field.field.node.feedback_form_result.field_feedback_media
+    - field.field.node.feedback_form_result.field_feedback_module_theme_link
+    - field.field.node.feedback_form_result.field_feedback_type
+    - node.type.feedback_form_result
+  module:
+    - link
+    - text
+    - user
+id: node.feedback_form_result.default
+targetEntityType: node
+bundle: feedback_form_result
+mode: default
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  field_feedback_media:
+    type: entity_reference_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 103
+    region: content
+  field_feedback_module_theme_link:
+    type: link
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 104
+    region: content
+  field_feedback_type:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 102
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden: {  }

@@ -1,0 +1,22 @@
+uuid: cb4dc6da-e456-4d81-8da4-b8c0b45863c4
+langcode: en
+status: true
+dependencies:
+  theme:
+    - starshot
+_core:
+  default_config_hash: nGE3EoPQQaQCuqTUtZgw0-KIzmrqdKDzdNQf2JyPUt4
+id: starshot_primary_local_tasks
+theme: starshot
+region: highlighted
+weight: -5
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: 'Primary tabs'
+  label_display: '0'
+  provider: core
+  primary: true
+  secondary: false
+visibility: {  }

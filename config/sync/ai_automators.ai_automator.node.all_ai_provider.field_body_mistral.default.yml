@@ -1,0 +1,36 @@
+uuid: 4058d609-4c73-4735-a1aa-52aafb69324a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.all_ai_provider.field_body_mistral
+id: node.all_ai_provider.field_body_mistral.default
+label: 'Body Mistral Default'
+rule: llm_simple_text_long
+input_mode: base
+weight: 100
+worker_type: batch
+entity_type: node
+bundle: all_ai_provider
+field_name: field_body_mistral
+edit_mode: true
+base_field: field_prompt
+prompt: "Generate the article according to the given prompt {{ context }} \r\n\r\nThe article should be structured in an appropriate HTML format, including the following sections:\r\n\r\n1. A `<h1>` heading with the title of the article.\r\n2. A short `<p>` introductory paragraph summarizing the content.\r\n3. Several `<h2>` subheadings to organize the main points.\r\n4. Detailed paragraphs (`<p>`) for each subheading that explain the topic.\r\n5. A `<h3>` section at the end titled \"Conclusion\" with a brief summary of the main ideas.\r\n6. Add appropriate <ul> or <ol> lists for clarity.\r\n7. Add a `<blockquote>` section if relevant quotes or references are needed.\r\n8. Don't use CSS classes\r\n\r\nMake sure the content is written in a professional tone and well-structured for easy reading.\r\n"
+token: ''
+plugin_config:
+  automator_enabled: 1
+  automator_rule: llm_simple_text_long
+  automator_mode: base
+  automator_base_field: field_prompt
+  automator_prompt: "Generate the article according to the given prompt {{ context }} \r\n\r\nThe article should be structured in an appropriate HTML format, including the following sections:\r\n\r\n1. A `<h1>` heading with the title of the article.\r\n2. A short `<p>` introductory paragraph summarizing the content.\r\n3. Several `<h2>` subheadings to organize the main points.\r\n4. Detailed paragraphs (`<p>`) for each subheading that explain the topic.\r\n5. A `<h3>` section at the end titled \"Conclusion\" with a brief summary of the main ideas.\r\n6. Add appropriate <ul> or <ol> lists for clarity.\r\n7. Add a `<blockquote>` section if relevant quotes or references are needed.\r\n8. Don't use CSS classes\r\n\r\nMake sure the content is written in a professional tone and well-structured for easy reading.\r\n"
+  automator_token: ''
+  automator_edit_mode: 1
+  automator_label: 'Body Mistral Default'
+  automator_weight: '100'
+  automator_worker_type: batch
+  automator_ai_provider: mistral
+  automator_ai_model: codestral-mamba-latest
+  automator_configuration_max_tokens: '300'
+  automator_configuration_temperature: '0.7'
+  automator_configuration_top_p: '1'
+  automator_code_block_type: html

@@ -1,0 +1,5 @@
+_core:
+  default_config_hash: 15BW_RNeS3oVc4z0CgOupqWoCMvBEWAPs5nSwC62RjI
+host_name: 'http://10.10.10.177'
+port: 5050
+api_key: null

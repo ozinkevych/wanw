@@ -1,0 +1,19 @@
+uuid: 1647b31e-56c6-486c-81b8-c9266f3e9e56
+langcode: en
+status: true
+dependencies:
+  module:
+    - link
+    - node
+id: node.field_example_site
+field_name: field_example_site
+entity_type: node
+type: link
+settings: {  }
+module: link
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,37 @@
+uuid: 9b9d53a3-80fd-42c3-8932-60949b7c29c2
+langcode: en
+status: true
+dependencies:
+  module:
+    - scheduler
+    - type_tray
+third_party_settings:
+  type_tray:
+    type_category: _none
+    type_thumbnail: ''
+    type_icon: 'public://type-tray-icons/icon-event.svg'
+    type_description: ''
+    existing_nodes_link_text: ''
+    type_weight: 0
+  scheduler:
+    expand_fieldset: when_required
+    fields_display_mode: vertical_tab
+    publish_enable: true
+    publish_past_date: error
+    publish_past_date_created: false
+    publish_required: false
+    publish_revision: true
+    publish_touch: true
+    show_message_after_update: true
+    unpublish_enable: true
+    unpublish_required: false
+    unpublish_revision: true
+_core:
+  default_config_hash: 7BwJnamJjnfpfK-2_pk-zKo1zjHVGsIzxvBgwrsmZGA
+name: Event
+type: event
+description: 'Use the event content type for creating and managing events, complete with details like date, time, location, and description.'
+help: null
+new_revision: true
+preview_mode: 1
+display_submitted: true

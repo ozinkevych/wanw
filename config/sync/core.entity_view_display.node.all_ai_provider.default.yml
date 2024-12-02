@@ -1,0 +1,57 @@
+uuid: 2096f51d-9671-4ec1-bdf7-781b22b10c98
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.all_ai_provider.ai_automator_status
+    - field.field.node.all_ai_provider.body
+    - field.field.node.all_ai_provider.field_body_groq
+    - field.field.node.all_ai_provider.field_body_mistral
+    - field.field.node.all_ai_provider.field_prompt
+    - node.type.all_ai_provider
+  module:
+    - layout_builder
+    - layout_discovery
+    - text
+    - user
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: node.all_ai_provider.default
+targetEntityType: node
+bundle: all_ai_provider
+mode: default
+content:
+  body:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_body_groq:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_body_mistral:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_prompt:
+    type: basic_string
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  ai_automator_status: true
+  links: true
+  search_api_excerpt: true

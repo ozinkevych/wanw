@@ -1,0 +1,10 @@
+analyse_policies_enabled: '0'
+tone_adjust_enabled: '1'
+summarise_enabled: '1'
+suggest_title_enabled: '1'
+suggest_tax_enabled: '1'
+analyse_policies_model: ''
+tone_adjust_model: mistral__mistral-small-latest
+summarise_model: mistral__mistral-large-2402
+suggest_title_model: mistral__mistral-small-latest
+suggest_tax_model: mistral__mistral-small

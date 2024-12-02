@@ -1,0 +1,36 @@
+uuid: 366c3847-3070-4f6d-aac9-2ba099b8cba0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.mistral.body
+id: node.mistral.body.default
+label: 'Body Default'
+rule: llm_simple_text_with_summary
+input_mode: base
+weight: 100
+worker_type: batch
+entity_type: node
+bundle: mistral
+field_name: body
+edit_mode: true
+base_field: title
+prompt: "Write an engaging and informative article with the following title: \"{{ context }}\". The article should be structured in an appropriate HTML format, including the following sections:\r\n\r\n1. A `<h1>` heading with the title of the article.\r\n2. A short `<p>` introductory paragraph summarizing the content.\r\n3. Several `<h2>` subheadings to organize the main points.\r\n4. Detailed paragraphs (`<p>`) for each subheading that explain the topic.\r\n5. A `<h3>` section at the end titled \"Conclusion\" with a brief summary of the main ideas.\r\n6. Add appropriate <ul> or <ol> lists for clarity.\r\n7. Add a `<blockquote>` section if relevant quotes or references are needed.\r\n8. Don't use CSS classes\r\n\r\nMake sure the content is written in a professional tone and well-structured for easy reading."
+token: ''
+plugin_config:
+  automator_enabled: 1
+  automator_rule: llm_simple_text_with_summary
+  automator_mode: base
+  automator_base_field: title
+  automator_prompt: "Write an engaging and informative article with the following title: \"{{ context }}\". The article should be structured in an appropriate HTML format, including the following sections:\r\n\r\n1. A `<h1>` heading with the title of the article.\r\n2. A short `<p>` introductory paragraph summarizing the content.\r\n3. Several `<h2>` subheadings to organize the main points.\r\n4. Detailed paragraphs (`<p>`) for each subheading that explain the topic.\r\n5. A `<h3>` section at the end titled \"Conclusion\" with a brief summary of the main ideas.\r\n6. Add appropriate <ul> or <ol> lists for clarity.\r\n7. Add a `<blockquote>` section if relevant quotes or references are needed.\r\n8. Don't use CSS classes\r\n\r\nMake sure the content is written in a professional tone and well-structured for easy reading."
+  automator_token: ''
+  automator_edit_mode: 1
+  automator_label: 'Body Default'
+  automator_weight: '100'
+  automator_worker_type: batch
+  automator_ai_provider: mistral
+  automator_ai_model: ministral-3b-latest
+  automator_configuration_max_tokens: '1010'
+  automator_configuration_temperature: '0.7'
+  automator_configuration_top_p: '1'
+  automator_code_block_type: html

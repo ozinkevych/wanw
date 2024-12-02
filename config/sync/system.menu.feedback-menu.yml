@@ -1,0 +1,8 @@
+uuid: 557e3e42-5340-43ce-8f93-635b375da7aa
+langcode: en
+status: true
+dependencies: {  }
+id: feedback-menu
+label: 'Feedback menu'
+description: ''
+locked: false

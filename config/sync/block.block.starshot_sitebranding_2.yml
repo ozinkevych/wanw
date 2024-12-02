@@ -1,0 +1,23 @@
+uuid: 7db494de-5901-4d9b-a0bd-c4b18065b6a0
+langcode: en
+status: false
+dependencies:
+  module:
+    - system
+  theme:
+    - starshot
+id: starshot_sitebranding_2
+theme: starshot
+region: footer_top
+weight: -7
+provider: null
+plugin: system_branding_block
+settings:
+  id: system_branding_block
+  label: 'Site branding'
+  label_display: '0'
+  provider: system
+  use_site_logo: false
+  use_site_name: true
+  use_site_slogan: false
+visibility: {  }

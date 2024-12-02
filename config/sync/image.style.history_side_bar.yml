@@ -1,0 +1,14 @@
+uuid: 16a230de-270e-4de4-aa1b-ebc195f7528b
+langcode: en
+status: true
+dependencies: {  }
+name: history_side_bar
+label: 'History Side Bar'
+effects:
+  3ac5eaf6-ea57-468a-b15b-d6b30cb39a8b:
+    uuid: 3ac5eaf6-ea57-468a-b15b-d6b30cb39a8b
+    id: image_resize
+    weight: -10
+    data:
+      width: 100
+      height: 100

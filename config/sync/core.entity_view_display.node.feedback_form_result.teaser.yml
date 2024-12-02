@@ -1,0 +1,36 @@
+uuid: 425f44da-b0a5-4c04-abf6-3912ca050ff1
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.feedback_form_result.body
+    - field.field.node.feedback_form_result.field_feedback_media
+    - field.field.node.feedback_form_result.field_feedback_module_theme_link
+    - field.field.node.feedback_form_result.field_feedback_type
+    - node.type.feedback_form_result
+  module:
+    - text
+    - user
+id: node.feedback_form_result.teaser
+targetEntityType: node
+bundle: feedback_form_result
+mode: teaser
+content:
+  body:
+    type: text_summary_or_trimmed
+    label: hidden
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_feedback_media: true
+  field_feedback_module_theme_link: true
+  field_feedback_type: true

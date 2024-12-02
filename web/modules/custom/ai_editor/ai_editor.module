@@ -1,0 +1,55 @@
+<?php
+
+/**
+ * Implements hook_form_BASE_FORM_ID_alter().
+ */
+function ai_editor_form_node_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+  // Отримання поточного типу контенту
+  $node_type = $form_state->getFormObject()->getEntity()->bundle();
+
+  // Отримання налаштувань AI для цього типу контенту
+  $ai_settings = \Drupal::config('fireworks_ai.settings')->get('content_types.' . $node_type . '.body');
+
+  if (!empty($ai_settings)) {
+    // Додавання налаштувань AI до форми редагування
+    $form['body']['#ai_automator_settings'] = $ai_settings;
+
+    // Додавання власного обробника для AI
+    $form['actions']['ai_generate'] = [
+      '#type' => 'button',
+      '#value' => t('Generate with AI'),
+      '#weight' => 100,
+      '#ajax' => [
+        'callback' => 'ai_editor_generate_content',
+        'wrapper' => 'body-wrapper',
+        'method' => 'replace',
+      ],
+    ];
+  }
+}
+
+/**
+ * AJAX callback для генерації контенту з AI.
+ */
+function ai_editor_generate_content(array &$form, \Drupal\Core\Form\FormStateInterface $form_state) {
+  // Отримання налаштувань AI
+  $ai_settings = $form['body']['#ai_automator_settings'];
+
+  // Логіка генерації контенту з використанням налаштувань AI
+  // Наприклад, виклик API Fireworks AI
+  $generated_content = ai_editor_call_ai_service($ai_settings);
+
+  // Оновлення поля body
+  $form['body']['widget'][0]['value']['#value'] = $generated_content;
+
+  return $form['body']['widget'][0]['value'];
+}
+
+/**
+ * Функція для виклику AI сервісу.
+ */
+function ai_editor_call_ai_service($ai_settings) {
+  // Реалізація виклику AI сервісу з налаштувань
+  // Це місце для інтеграції з конкретним AI провайдером
+  return "Згенерований AI контент на основі налаштувань: " . print_r($ai_settings, true);
+}

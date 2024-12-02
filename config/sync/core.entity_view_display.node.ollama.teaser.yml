@@ -1,0 +1,31 @@
+uuid: 01c7e3c8-556d-4187-b1ff-71019fa9c03d
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.ollama.ai_automator_status
+    - field.field.node.ollama.body
+    - field.field.node.ollama.field_tags
+    - node.type.ollama
+  module:
+    - text
+    - user
+id: node.ollama.teaser
+targetEntityType: node
+bundle: ollama
+mode: teaser
+content:
+  body:
+    type: text_trimmed
+    label: hidden
+    settings:
+      trim_length: 100
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  ai_automator_status: true
+  field_tags: true
+  links: true
+  search_api_excerpt: true

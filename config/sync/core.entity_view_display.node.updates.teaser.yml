@@ -1,0 +1,45 @@
+uuid: aa231f27-c577-4e19-bf4f-731d7f8f9cd6
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.updates.body
+    - field.field.node.updates.field_changes
+    - field.field.node.updates.field_documentation_update_link
+    - field.field.node.updates.field_example_update_link
+    - field.field.node.updates.field_version
+    - node.type.updates
+  module:
+    - layout_builder
+    - text
+    - user
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: node.updates.teaser
+targetEntityType: node
+bundle: updates
+mode: teaser
+content:
+  body:
+    type: text_summary_or_trimmed
+    label: hidden
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  flag_bookmark:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  field_changes: true
+  field_documentation_update_link: true
+  field_example_update_link: true
+  field_version: true
+  links: true
+  search_api_excerpt: true

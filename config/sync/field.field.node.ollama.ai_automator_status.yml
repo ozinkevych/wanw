@@ -1,0 +1,22 @@
+uuid: 35c37f13-e773-4823-877e-0801528705d5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.ai_automator_status
+    - node.type.ollama
+  module:
+    - options
+id: node.ollama.ai_automator_status
+field_name: ai_automator_status
+entity_type: node
+bundle: ollama
+label: 'AI Automator Status'
+description: ''
+required: true
+translatable: true
+default_value:
+  - pending
+default_value_callback: ''
+settings: {  }
+field_type: list_string

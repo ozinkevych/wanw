@@ -1,0 +1,57 @@
+{
+    "_hash": "9a5ca8c61d4e2af6154cbed020208fa39b89c60269ef3155aae0658ad089b43a",
+    "patches": {
+        "drupal/core": [
+            {
+                "package": "drupal/core",
+                "description": "#3303126: Allow recipes to reuse existing config values",
+                "url": "./patches/core/recipes-150.patch",
+                "sha256": "b7058b1aea8029df3443826aa3e25967916aa9626088e2a556b185e5df0aab15",
+                "depth": 2,
+                "extra": {
+                    "provenance": "root"
+                }
+            },
+            {
+                "package": "drupal/core",
+                "description": "#3464550: Create config action which can create an entity for every bundle of another entity type",
+                "url": "./patches/core/8975.patch",
+                "sha256": "f57b4a1cd868d9eaf3214b53aa9c8ab7fab012bb84ae5aa77d3c7fa6c84da891",
+                "depth": 2,
+                "extra": {
+                    "provenance": "root"
+                }
+            },
+            {
+                "package": "drupal/core",
+                "description": "#3303127: Determine which core config entity methods should be config actions",
+                "url": "./patches/core/7940.patch",
+                "sha256": "2464d54a1d819a156790dc56fbab7d3be007d40c48064ddff9485f46b250e025",
+                "depth": 2,
+                "extra": {
+                    "provenance": "root"
+                }
+            },
+            {
+                "package": "drupal/core",
+                "description": "Ensure core recipes that affect user roles also install the User module",
+                "url": "./patches/core/core-recipes-user-import.patch",
+                "sha256": "00dc42a19edcc00700710dc1e209c69b3a549159b56595b9a54b84dd84a04cc5",
+                "depth": 2,
+                "extra": {
+                    "provenance": "root"
+                }
+            },
+            {
+                "package": "drupal/core",
+                "description": "#3416357: Convert QueueFactory to use a service locator",
+                "url": "./patches/core/3416357-10.3.x-only.patch",
+                "sha256": "10dad7d38252fa98eedcd93b5cafa5a5a660c068ea921efe4ccef402f5bcdc85",
+                "depth": 2,
+                "extra": {
+                    "provenance": "root"
+                }
+            }
+        ]
+    }
+}

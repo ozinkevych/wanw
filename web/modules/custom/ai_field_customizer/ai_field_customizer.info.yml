@@ -1,0 +1,9 @@
+name: 'AI Field Customizer'
+type: module
+description: 'Custom module to extend AI functionality and field settings in Drupal 10.'
+core_version_requirement: ^10
+package: Custom
+dependencies:
+  - drupal:ai
+  - drupal:node
+  - drupal:ai_automators

@@ -1,0 +1,25 @@
+uuid: a924c1ed-4eaa-400d-bdaf-0ad00fc31ac2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.ckeditor_generation.field_generate_content
+    - node.type.ckeditor_generation
+  module:
+    - text
+    - user
+id: node.ckeditor_generation.default
+targetEntityType: node
+bundle: ckeditor_generation
+mode: default
+content:
+  field_generate_content:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  links: true
+  search_api_excerpt: true

@@ -1,0 +1,36 @@
+--- TextToImage.php.original	2024-11-20 17:20:39.366595140 +0200
++++ TextToImage.php	2024-10-29 11:46:54.000000000 +0200
+@@ -55,28 +55,16 @@
+     // Generate the images.
+     $images = [];
+     $instance = $this->prepareLlmInstance('text_to_image', $automatorConfig);
+-
+     foreach ($prompts as $prompt) {
++      // The image binary.
+       $input = new TextToImageInput($prompt);
+       $response = $instance->textToImage($input, $automatorConfig['ai_model'])->getNormalized();
+-
+       if (!empty($response)) {
+         foreach ($response as $image) {
+-          try {
+-            // Замінюємо getAsBinary() на getContents()
+-            $binary = $image instanceof \GuzzleHttp\Psr7\Stream
+-              ? $image->getContents()
+-              : (string) $image;
+-
+-            $images[] = [
+-              'filename' => $this->getFileName($automatorConfig),
+-              'binary' => $binary,
+-            ];
+-          }
+-          catch (\Exception $e) {
+-            \Drupal::logger('ai_automators')->error('Error processing image response: @error', ['@error' => $e->getMessage()]);
+-            continue;
+-          }
++          $images[] = [
++            'filename' => $this->getFileName($automatorConfig),
++            'binary' => $image->getAsBinary(),
++          ];
+         }
+       }
+     }

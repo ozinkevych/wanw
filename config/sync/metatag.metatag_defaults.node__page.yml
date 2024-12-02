@@ -1,0 +1,14 @@
+uuid: 08d4a765-7ada-4fa0-9660-0648dd3ad713
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: A4lQhewzfU_UzxnTDXhZkoRmYlM1IfLJcWIfELrWaD4
+id: node__page
+label: 'Content: Basic page'
+tags:
+  description: '[node:summary]'
+  og_description: '[node:summary]'
+  og_title: '[node:title]'
+  og_type: '[node:content-type]'
+  title: '[node:title]'

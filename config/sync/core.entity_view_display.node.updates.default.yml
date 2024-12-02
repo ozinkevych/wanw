@@ -1,0 +1,170 @@
+uuid: a80d326a-6ed4-4571-a995-e03e9731a8f2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.updates.body
+    - field.field.node.updates.field_changes
+    - field.field.node.updates.field_documentation_update_link
+    - field.field.node.updates.field_example_update_link
+    - field.field.node.updates.field_version
+    - node.type.updates
+  module:
+    - layout_builder
+    - text
+    - user
+third_party_settings:
+  layout_builder:
+    enabled: true
+    allow_custom: false
+    sections:
+      -
+        layout_id: layout_twocol_section
+        layout_settings:
+          label: ''
+          context_mapping: {  }
+          column_widths: 75-25
+        components:
+          35b21db1-e7d2-49c9-8c1b-652a9fb20f87:
+            uuid: 35b21db1-e7d2-49c9-8c1b-652a9fb20f87
+            region: second
+            configuration:
+              id: 'field_block:node:updates:field_changes'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: string
+                label: above
+                settings:
+                  link_to_entity: false
+                third_party_settings: {  }
+            weight: 0
+            additional: {  }
+          5a5a4fb1-36f3-4396-9320-c1370b812c80:
+            uuid: 5a5a4fb1-36f3-4396-9320-c1370b812c80
+            region: first
+            configuration:
+              id: 'field_block:node:updates:body'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: text_default
+                label: hidden
+                settings: {  }
+                third_party_settings: {  }
+            weight: 2
+            additional: {  }
+          43a22149-081e-45a9-85e5-635c5b71b5af:
+            uuid: 43a22149-081e-45a9-85e5-635c5b71b5af
+            region: first
+            configuration:
+              id: 'field_block:node:updates:field_example_update_link'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: entity_reference_label
+                label: above
+                settings:
+                  link: true
+                third_party_settings: {  }
+            weight: 3
+            additional: {  }
+          8dbf6050-1d93-4f06-8dbf-ebb54dd58c29:
+            uuid: 8dbf6050-1d93-4f06-8dbf-ebb54dd58c29
+            region: first
+            configuration:
+              id: 'field_block:node:updates:field_documentation_update_link'
+              label: 'Documentation update link'
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: entity_reference_label
+                label: hidden
+                settings:
+                  link: true
+                third_party_settings: {  }
+            weight: 0
+            additional: {  }
+          b29e1063-3179-43ed-bc20-19d870a3918b:
+            uuid: b29e1063-3179-43ed-bc20-19d870a3918b
+            region: first
+            configuration:
+              id: 'field_block:node:updates:field_version'
+              label: Version
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: number_decimal
+                label: hidden
+                settings:
+                  thousand_separator: ''
+                  decimal_separator: .
+                  scale: 2
+                  prefix_suffix: true
+                third_party_settings: {  }
+            weight: 1
+            additional: {  }
+        third_party_settings: {  }
+id: node.updates.default
+targetEntityType: node
+bundle: updates
+mode: default
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  field_changes:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 102
+    region: content
+  field_documentation_update_link:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 103
+    region: content
+  field_example_update_link:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 104
+    region: content
+  field_version:
+    type: number_decimal
+    label: above
+    settings:
+      thousand_separator: ''
+      decimal_separator: .
+      scale: 2
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 105
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  search_api_excerpt: true

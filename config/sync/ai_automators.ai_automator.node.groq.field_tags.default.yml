@@ -1,0 +1,39 @@
+uuid: 3edcf499-1d54-48b5-8d6d-6be9f91ea917
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.groq.field_tags
+id: node.groq.field_tags.default
+label: 'Tags Default'
+rule: llm_taxonomy
+input_mode: token
+weight: 200
+worker_type: batch
+entity_type: node
+bundle: groq
+field_name: field_tags
+edit_mode: true
+base_field: revision_log
+prompt: ''
+token: "Read the article [node:body] in detail and you need to create a tag for this article, the tag should consist of 1-2 words, and this tag should characterize the article as much as possible. If you have difficulty finding a tag by [node:body], then analyze the title of the article [node:title] and generate a tag by body, that is, you need to generate a tag that characterizes this [node] in any case\r\n\r\nif you do not understand at all what the article is about, just select a keyword from [node:title]\r\n\r\nIf there is some nonsense in [node:body] and [node:title] that you cannot understand, an unknown tag is used\r\n\r\nThe tag must be generated in the correct format\r\n\r\ncontext:\r\n[node]"
+plugin_config:
+  automator_enabled: 1
+  automator_rule: llm_taxonomy
+  automator_mode: token
+  automator_base_field: revision_log
+  automator_prompt: ''
+  automator_token: "Read the article [node:body] in detail and you need to create a tag for this article, the tag should consist of 1-2 words, and this tag should characterize the article as much as possible. If you have difficulty finding a tag by [node:body], then analyze the title of the article [node:title] and generate a tag by body, that is, you need to generate a tag that characterizes this [node] in any case\r\n\r\nif you do not understand at all what the article is about, just select a keyword from [node:title]\r\n\r\nIf there is some nonsense in [node:body] and [node:title] that you cannot understand, an unknown tag is used\r\n\r\nThe tag must be generated in the correct format\r\n\r\ncontext:\r\n[node]"
+  automator_edit_mode: 1
+  automator_label: 'Tags Default'
+  automator_weight: '200'
+  automator_worker_type: batch
+  automator_ai_provider: groq
+  automator_ai_model: llama3-8b-8192
+  automator_configuration_max_tokens: '1024'
+  automator_configuration_temperature: '1'
+  automator_configuration_frequency_penalty: '0'
+  automator_configuration_presence_penalty: '0'
+  automator_configuration_top_p: '1'
+  automator_clean_up: lowercase
+  automator_search_similar_tags: 0

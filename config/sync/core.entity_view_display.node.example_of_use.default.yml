@@ -1,0 +1,67 @@
+uuid: aabadacc-0d28-487d-892e-5729f66ab431
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.example_of_use.body
+    - field.field.node.example_of_use.field_documentation_example_link
+    - field.field.node.example_of_use.field_example_site
+    - field.field.node.example_of_use.field_media
+    - node.type.example_of_use
+  module:
+    - link
+    - text
+    - user
+id: node.example_of_use.default
+targetEntityType: node
+bundle: example_of_use
+mode: default
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_documentation_example_link:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  field_example_site:
+    type: link
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_media:
+    type: entity_reference_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  flag_bookmark:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  search_api_excerpt: true

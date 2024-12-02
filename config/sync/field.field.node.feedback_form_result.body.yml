@@ -1,0 +1,24 @@
+uuid: cced563c-7a4c-4702-a234-391323c6f470
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.feedback_form_result
+  module:
+    - text
+id: node.feedback_form_result.body
+field_name: body
+entity_type: node
+bundle: feedback_form_result
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+  required_summary: false
+  allowed_formats: {  }
+field_type: text_with_summary

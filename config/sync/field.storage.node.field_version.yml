@@ -1,0 +1,20 @@
+uuid: a4428f64-454c-45ab-89d8-f2ad497f956f
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_version
+field_name: field_version
+entity_type: node
+type: decimal
+settings:
+  precision: 10
+  scale: 2
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

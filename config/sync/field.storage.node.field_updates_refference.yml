@@ -1,0 +1,19 @@
+uuid: 5fed3bc2-45ab-4ed7-b861-99927bdfe1e1
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_updates_refference
+field_name: field_updates_refference
+entity_type: node
+type: entity_reference
+settings:
+  target_type: node
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

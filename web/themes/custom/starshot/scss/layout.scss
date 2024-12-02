@@ -1,0 +1,26 @@
+@import "variables";
+
+.grid-view-2-col {
+    .view-content {
+        display: grid;
+        grid-gap: $gutter;
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.grid-view-4-col {
+    .view-content {
+        display: grid;
+        grid-gap: $gutter;
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+.grid-view-8-col {
+    .view-content {
+        display: grid;
+        grid-gap: $gutter;
+        grid-template-columns: repeat(8, 1fr);
+    }
+}
+

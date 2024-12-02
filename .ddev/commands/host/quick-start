@@ -1,0 +1,10 @@
+#!/bin/bash
+
+## Description: Installs Drupal CMS and opens it in a browser.
+
+set -e
+
+ddev start
+ddev composer install
+ddev composer drupal:install
+test -n "$CI" || ddev launch

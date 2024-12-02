@@ -1,0 +1,24 @@
+uuid: a9a2434f-b4f3-4038-bc91-b65d22a5bcc5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.fireworks_ai
+  module:
+    - text
+id: node.fireworks_ai.body
+field_name: body
+entity_type: node
+bundle: fireworks_ai
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+  required_summary: false
+  allowed_formats: {  }
+field_type: text_with_summary

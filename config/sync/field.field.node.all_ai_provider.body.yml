@@ -1,0 +1,26 @@
+uuid: c9417664-dd75-4b31-b4b3-0bdf493b40d0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - filter.format.basic_html
+    - node.type.all_ai_provider
+  module:
+    - text
+id: node.all_ai_provider.body
+field_name: body
+entity_type: node
+bundle: all_ai_provider
+label: 'Body Fireworks AI'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: false
+  required_summary: false
+  allowed_formats:
+    - basic_html
+field_type: text_with_summary

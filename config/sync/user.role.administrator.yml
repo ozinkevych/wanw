@@ -1,0 +1,18 @@
+uuid: 3ea233f9-7755-48ee-8cd2-3f2a091c151c
+langcode: en
+status: true
+dependencies:
+  module:
+    - field_permissions
+_core:
+  default_config_hash: OeKGIkmZA_c-t6QLH81WNQx8gDCc1MRmxaTuQgxBByU
+id: administrator
+label: Administrator
+weight: 3
+is_admin: true
+permissions:
+  - 'create body'
+  - 'edit body'
+  - 'edit own body'
+  - 'view body'
+  - 'view own body'

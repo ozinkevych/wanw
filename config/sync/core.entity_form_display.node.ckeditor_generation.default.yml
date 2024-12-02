@@ -1,0 +1,35 @@
+uuid: bf68a51f-6e37-421c-abc4-8f878fb562c6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.ckeditor_generation.field_generate_content
+    - node.type.ckeditor_generation
+  module:
+    - text
+id: node.ckeditor_generation.default
+targetEntityType: node
+bundle: ckeditor_generation
+mode: default
+content:
+  field_generate_content:
+    type: text_textarea
+    weight: 26
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  moderation_state: true
+  path: true
+  promote: true
+  publish_on: true
+  simple_sitemap: true
+  status: true
+  sticky: true
+  title: true
+  uid: true
+  unpublish_on: true
+  url_redirects: true

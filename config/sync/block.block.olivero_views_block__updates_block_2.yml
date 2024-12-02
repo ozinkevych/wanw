@@ -1,0 +1,29 @@
+uuid: 70c61a7b-30f7-4a4c-b20f-f17201c825a6
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.updates
+  module:
+    - system
+    - views
+  theme:
+    - olivero
+id: olivero_views_block__updates_block_2
+theme: olivero
+region: sidebar
+weight: 0
+provider: null
+plugin: 'views_block:updates-block_2'
+settings:
+  id: 'views_block:updates-block_2'
+  label: ''
+  label_display: '0'
+  provider: views
+  views_label: ''
+  items_per_page: none
+visibility:
+  request_path:
+    id: request_path
+    negate: true
+    pages: "/updates\r\n/updates/*"

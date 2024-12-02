@@ -1,0 +1,24 @@
+uuid: f2b352ac-de10-41c7-b2d2-cef2fb3b0d5a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.lm_studio
+  module:
+    - text
+id: node.lm_studio.body
+field_name: body
+entity_type: node
+bundle: lm_studio
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: false
+  required_summary: false
+  allowed_formats: {  }
+field_type: text_with_summary

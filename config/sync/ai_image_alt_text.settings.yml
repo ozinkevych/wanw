@@ -1,0 +1,5 @@
+prompt: "Generate an alt text description for the image based on the following context: \"{{ context }}\". The alt text should be a clear, concise, and descriptive representation of the content in the image, ensuring accessibility for users who cannot see the image. Describe the key elements, objects, or actions depicted in the image in a way that is both informative and relevant to the context.\r\n\r\nContext:\r\n{{ context }}\r\n"
+image_style: ''
+hide_button: true
+autogenerate: true
+ai_model: fireworks__accounts/fireworks/models/llama-v3p2-90b-vision-instruct

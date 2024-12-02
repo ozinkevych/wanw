@@ -1,0 +1,54 @@
+uuid: 28f2dca0-0282-40f6-9f71-be520bf1f062
+langcode: en
+status: true
+dependencies:
+  config:
+    - filter.format.basic_html
+    - filter.format.full_html
+    - filter.format.webform_default
+  module:
+    - ai_ckeditor
+    - antibot
+    - comment
+    - file
+    - filter
+    - flag
+    - help
+    - honeypot
+    - media
+    - media_entity_download
+    - node
+    - search
+    - shortcut
+    - system
+    - webform
+_core:
+  default_config_hash: dJ0L2DNSj5q6XVZAGsuVDpJTh5UeYkIPwKrUOOpr8YI
+id: authenticated
+label: 'Authenticated user'
+weight: 1
+is_admin: false
+permissions:
+  - 'access comments'
+  - 'access content'
+  - 'access help pages'
+  - 'access shortcuts'
+  - 'access user profiles'
+  - 'access webform submission user'
+  - 'bypass honeypot protection'
+  - 'delete own files'
+  - 'download media'
+  - 'flag bookmark'
+  - 'post comments'
+  - 'search content'
+  - 'skip antibot'
+  - 'skip comment approval'
+  - 'unflag bookmark'
+  - 'use advanced search'
+  - 'use ai ckeditor'
+  - 'use text format basic_html'
+  - 'use text format full_html'
+  - 'use text format webform_default'
+  - 'view any webform submission'
+  - 'view media'
+  - 'view own unpublished content'

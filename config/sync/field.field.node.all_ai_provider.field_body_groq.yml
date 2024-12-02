@@ -1,0 +1,24 @@
+uuid: cbd054a1-373c-4fa8-9bd8-be35e3a2d8d6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_body_groq
+    - filter.format.basic_html
+    - node.type.all_ai_provider
+  module:
+    - text
+id: node.all_ai_provider.field_body_groq
+field_name: field_body_groq
+entity_type: node
+bundle: all_ai_provider
+label: 'Body Groq'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats:
+    - basic_html
+field_type: text_long

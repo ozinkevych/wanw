@@ -1,0 +1,31 @@
+uuid: cc50ca98-4145-4869-873d-d5277fbb2e7b
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.hugging_face.ai_automator_status
+    - field.field.node.hugging_face.body
+    - field.field.node.hugging_face.field_tags
+    - node.type.hugging_face
+  module:
+    - text
+    - user
+id: node.hugging_face.teaser
+targetEntityType: node
+bundle: hugging_face
+mode: teaser
+content:
+  body:
+    type: text_trimmed
+    label: hidden
+    settings:
+      trim_length: 100
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  ai_automator_status: true
+  field_tags: true
+  links: true
+  search_api_excerpt: true

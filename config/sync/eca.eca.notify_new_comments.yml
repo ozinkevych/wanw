@@ -1,0 +1,76 @@
+uuid: 4e3429ef-b8ff-459a-9486-fec7cf7490d3
+langcode: en
+status: true
+dependencies:
+  module:
+    - eca_base
+    - eca_content
+_core:
+  default_config_hash: DRHkF0dohrJ3FQxdQrRW-JFj4mT29kxKAwOWBI9RNU0
+id: notify_new_comments
+modeller: bpmn_io
+label: 'Notify by email: New Comments'
+version: v3
+weight: 0
+events:
+  Event_0i3cw7g:
+    plugin: 'content_entity:insert'
+    label: 'New comment created'
+    configuration:
+      type: 'comment _all'
+    successors:
+      -
+        id: Activity_1fctzqc
+        condition: ''
+conditions:
+  Flow_0jlccfa:
+    plugin: eca_scalar
+    configuration:
+      case: false
+      left: '[site:mail]'
+      right: '[entity:entity:author:mail]'
+      operator: equal
+      type: value
+      negate: true
+gateways: {  }
+actions:
+  Activity_1l3vura:
+    plugin: action_send_email_action
+    label: 'Send email'
+    configuration:
+      recipient: '[recipients]'
+      subject: 'New comment: [entity:entity:title]'
+      message: |-
+        A new comment was posted to "[entity:entity:title]":
+
+        - Title: [entity:title]
+        - Author: [entity:author:name] from [entity:author:mail]
+        - Link to commented content: [entity:entity:url]
+
+        Comment:
+
+        [entity:body]
+      replace_tokens: true
+    successors: {  }
+  Activity_1fctzqc:
+    plugin: eca_token_set_value
+    label: 'Set site mail ad recipient'
+    configuration:
+      token_name: recipients
+      token_value: '[site:mail]'
+      use_yaml: false
+    successors:
+      -
+        id: Activity_0ai94ln
+        condition: Flow_0jlccfa
+      -
+        id: Activity_1l3vura
+        condition: ''
+  Activity_0ai94ln:
+    plugin: eca_token_set_value
+    label: 'Add node author to recipients'
+    configuration:
+      token_name: recipients
+      token_value: '[recipients],[entity:entity:author:mail]'
+      use_yaml: false
+    successors: {  }

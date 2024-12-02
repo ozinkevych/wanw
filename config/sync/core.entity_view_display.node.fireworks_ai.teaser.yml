@@ -1,0 +1,33 @@
+uuid: 40fb34e4-0fd1-4761-9406-36c7b903a343
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.fireworks_ai.ai_automator_status
+    - field.field.node.fireworks_ai.body
+    - field.field.node.fireworks_ai.field_ai_image
+    - field.field.node.fireworks_ai.field_tags
+    - node.type.fireworks_ai
+  module:
+    - text
+    - user
+id: node.fireworks_ai.teaser
+targetEntityType: node
+bundle: fireworks_ai
+mode: teaser
+content:
+  body:
+    type: text_trimmed
+    label: hidden
+    settings:
+      trim_length: 100
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  ai_automator_status: true
+  field_ai_image: true
+  field_tags: true
+  links: true
+  search_api_excerpt: true

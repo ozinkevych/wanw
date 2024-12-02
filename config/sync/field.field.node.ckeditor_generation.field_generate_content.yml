@@ -1,0 +1,24 @@
+uuid: 54e71378-7f21-4797-a36c-4a74b64d5bc7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_generate_content
+    - filter.format.full_html
+    - node.type.ckeditor_generation
+  module:
+    - text
+id: node.ckeditor_generation.field_generate_content
+field_name: field_generate_content
+entity_type: node
+bundle: ckeditor_generation
+label: 'Generate content'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats:
+    - full_html
+field_type: text_long

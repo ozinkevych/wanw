@@ -1,0 +1,22 @@
+uuid: 947b4dc9-e7a3-4b22-bbf5-ba64e3ee92a3
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: updates_content
+label: 'Updates content'
+type: 'canonical_entities:node'
+pattern: '/updates/[node:title]'
+selection_criteria:
+  2417f2b8-865e-4fee-b480-9d3ba715aeba:
+    id: 'entity_bundle:node'
+    negate: false
+    uuid: 2417f2b8-865e-4fee-b480-9d3ba715aeba
+    context_mapping:
+      node: node
+    bundles:
+      updates: updates
+selection_logic: and
+weight: -5
+relationships: {  }

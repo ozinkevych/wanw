@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="VcsDirectoryMappings">
+    <mapping directory="" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/web/modules/contrib/ai_image_alt_text" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/web/modules/contrib/ai_provider_mistral" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/web/modules/contrib/layout_section_fields" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/web/modules/contrib/project_browser" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/web/recipes/notify_new_comments" vcs="Git" />
+  </component>
+</project>

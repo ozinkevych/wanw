@@ -1,0 +1,33 @@
+uuid: 26f373fd-8b27-4846-8af0-7e7d97ec9f40
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.test.field_test
+id: node.test.field_test.default
+label: 'Test Default'
+rule: llm_text_long
+input_mode: base
+weight: 100
+worker_type: direct
+entity_type: node
+bundle: test
+field_name: field_test
+edit_mode: false
+base_field: revision_log
+prompt: asdqweasd
+token: ''
+plugin_config:
+  automator_enabled: 1
+  automator_rule: llm_text_long
+  automator_mode: base
+  automator_base_field: revision_log
+  automator_prompt: asdqweasd
+  automator_token: ''
+  automator_edit_mode: 0
+  automator_label: 'Test Default'
+  automator_weight: '100'
+  automator_worker_type: direct
+  automator_ai_provider: default_json
+  automator_joiner: ''
+  automator_joiner_other: ''

@@ -1,0 +1,40 @@
+uuid: 8ec3b4bd-0282-4ac3-8084-77c1c99224d9
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.all_ai_provider.ai_automator_status
+    - field.field.node.all_ai_provider.body
+    - field.field.node.all_ai_provider.field_body_groq
+    - field.field.node.all_ai_provider.field_body_mistral
+    - field.field.node.all_ai_provider.field_prompt
+    - node.type.all_ai_provider
+  module:
+    - layout_builder
+    - text
+    - user
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: node.all_ai_provider.teaser
+targetEntityType: node
+bundle: all_ai_provider
+mode: teaser
+content:
+  body:
+    type: text_trimmed
+    label: hidden
+    settings:
+      trim_length: 100
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  ai_automator_status: true
+  field_body_groq: true
+  field_body_mistral: true
+  field_prompt: true
+  links: true
+  search_api_excerpt: true

@@ -1,0 +1,10 @@
+status: 1
+pattern: 'CKEditor generation | [node:nid] | [current-date:html_date]'
+escape: false
+preserve_titles: false
+save: true
+chunk: 50
+dependencies:
+  config:
+    - node.type.ckeditor_generation
+new_content_behavior: 0

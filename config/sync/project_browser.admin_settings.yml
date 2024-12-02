@@ -1,0 +1,8 @@
+enabled_sources:
+  - drupalorg_jsonapi
+  - recipes
+allow_ui_install: true
+allowed_projects:
+  recipes:
+    - drupal_cms_accessibility_tools
+    - drupal_cms_multilingual
